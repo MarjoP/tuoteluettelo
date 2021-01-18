@@ -22,7 +22,7 @@ export class PhonesService {
   }
 
   getDetails(phoneId:string): Observable<any> {
-    let source="../../assets/phones/"+phoneId+".json";
+    let source="../assets/phones/"+phoneId+".json";
     return this.http.get(source);
   }
 
