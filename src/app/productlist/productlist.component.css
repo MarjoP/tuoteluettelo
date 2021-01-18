@@ -1,0 +1,15 @@
+.content {
+  display:flex;
+  flex-direction:flow;
+  flex-wrap:nowrap;
+}
+
+.inputs {
+padding:20px;
+}
+
+.inputs p {
+  font-size:20px;
+  margin-top:10px;
+  margin-bottom:2px;
+}

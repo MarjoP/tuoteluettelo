@@ -1,0 +1,66 @@
+
+<button class="back" (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> Back</button>
+<section class="uppercontent ">
+
+  <section class="image">
+    <img src="/assets/{{phone.imageUrl}}">
+  </section>
+
+  <section class="main">
+    <h2>{{phone.name}}</h2>
+    <p>{{phoneDetails.description}}</p>
+    <picture class="thumbnails" *ngFor="let imgSrc of phoneDetails.images">
+      <img src="/assets/{{imgSrc}}" (click)="changeImage(imgSrc)">
+    </picture>
+  </section>
+</section>
+<hr>
+  <section class="lowercontent">
+    <section class="info">
+      <h5>Availability and Networks</h5>
+      <h6>Availability</h6>
+      <p>{{phoneDetails.availability}}</p>
+    </section>
+
+    <section class="info">
+      <h5>Battery</h5>
+      <h6>Type</h6>
+      <p>{{phoneDetails.battery.type}}</p>
+      <h6>Talk Time</h6>
+      <p>{{phoneDetails.battery.talkTime}}</p>
+      <h6>Standby time (max)</h6>
+      <p>{{phoneDetails.battery.standbyTime}}</p>
+    </section>
+
+    <section class="info">
+      <h5>Storage and Memory</h5>
+      <h6>RAM</h6>
+      <p>{{phoneDetails.storage.ram}}</p>
+      <h6>Internal Storage</h6>
+      <p>{{phoneDetails.storage.flash}}</p>
+    </section>
+
+    <section class="info">
+      <h5>Connectivity</h5>
+      <h6>Network Support</h6>
+      <p>{{phoneDetails.connectivity.cell}}</p>
+      <h6>WiFi</h6>
+      <p>{{phoneDetails.connectivity.wifi}}</p>
+      <h6>Bluetooth</h6>
+      <p>{{phoneDetails.connectivity.bluetooth}}</p>
+      <h6>Infrared</h6>
+
+
+      <p>
+        <fa-icon *ngIf="phoneDetails.connectivity.infrared" [icon] = "faCheck"></fa-icon>
+        <fa-icon *ngIf="!phoneDetails.connectivity.infrared" [icon] = "faTimes"></fa-icon>
+
+      </p>
+      <h6>GPS</h6>
+      <p>
+        <fa-icon *ngIf="phoneDetails.connectivity.gps" [icon] = "faCheck"></fa-icon>
+        <fa-icon *ngIf="!phoneDetails.connectivity.gps" [icon] = "faTimes"></fa-icon>
+      </p>
+
+    </section>
+</section>

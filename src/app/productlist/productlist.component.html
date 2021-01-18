@@ -1,4 +1,21 @@
+<section class="content">
 
-<section *ngFor="let item of items">
-<app-product [product]="item"></app-product>
+  <section class="inputs">
+    <p>Search:</p>
+    <input type="text" [(ngModel)]="searched">
+    <p>Sort by:</p>
+
+    <select class="form-select" aria-label="" [(ngModel)]="sortBy" (change)="filterItem($event.target.value)">
+      <option value="name">Alphabetical</option>
+      <option value="age">Newest</option>
+    </select>
+  </section>
+
+  <section class="results">
+    <section *ngFor="let item of items|filter:searched:'name'|sort:[sortBy]">
+    <app-product [product]="item"></app-product>
+  </section>
+
 </section>
+
+

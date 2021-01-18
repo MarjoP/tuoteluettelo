@@ -1,7 +1,7 @@
 <div class="row m-3">
-  <img class="col-4" src="/assets/{{product.imageUrl}}">
-  <section class="col-8 text">
-    <a href=""><h3>{{product.name}}</h3></a>
+  <img class="col-3" src="/assets/{{product.imageUrl}}">
+  <section class="col-9 text">
+    <a routerLink="details" [queryParams] ="{prod:product.id}"><h3>{{product.name}}</h3></a>
     <p>{{product.snippet}}</p>
   </section>
 </div>

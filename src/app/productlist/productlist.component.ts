@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import itemData from '../../assets/phones/phones.json';
+
+import { PhonesService } from '../services/phones.service';
 
 
 
@@ -9,11 +10,17 @@ import itemData from '../../assets/phones/phones.json';
   styleUrls: ['./productlist.component.css']
 })
 export class ProductlistComponent implements OnInit {
+  items;
+  searched="";
+  sortBy='age';
 
-  items: [] = itemData;
-  constructor() { }
+  constructor(private phoneService:PhonesService) { }
 
   ngOnInit(): void {
+    this.items = this.phoneService.getPhones();
   }
 
+  filterItem(filterVal:any){
+    this.sortBy=filterVal;
+  }
 }
