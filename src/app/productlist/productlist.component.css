@@ -1,6 +1,6 @@
 .content {
   display:flex;
-  flex-direction:flow;
+  flex-direction:row;
   flex-wrap:nowrap;
 }
 
@@ -12,4 +12,10 @@ padding:20px;
   font-size:20px;
   margin-top:10px;
   margin-bottom:2px;
+}
+
+@media (max-width: 767px) {
+  .content {
+    flex-direction:column;
+  }
 }

@@ -7,3 +7,18 @@
   max-width:1000px;
 }
 
+@media (max-width: 425px){
+  .row {
+    display:flex;
+    flex-direction: column;
+  }
+  .image {
+    max-width:70% !important;
+  }
+  .text {
+    font-size:12px;;
+  }
+  .text a h3 {
+    font-size:18px;
+  }
+}
