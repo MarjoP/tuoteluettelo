@@ -3,14 +3,14 @@
 <section class="uppercontent ">
 
   <section class="image">
-    <img src="/assets/{{phone.imageUrl}}">
+    <img src="../../assets/{{phone.imageUrl}}">
   </section>
 
   <section class="main">
     <h2>{{phone.name}}</h2>
     <p>{{phoneDetails.description}}</p>
     <picture class="thumbnails" *ngFor="let imgSrc of phoneDetails.images">
-      <img src="/assets/{{imgSrc}}" (click)="changeImage(imgSrc)">
+      <img src="../../assets/{{imgSrc}}" (click)="changeImage(imgSrc)">
     </picture>
   </section>
 </section>
